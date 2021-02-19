@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content %}
+<div class="posts-page">
+	<div class="container">
+		{% block prepost %}{% endblock %}
+		{% block post_content %}{% endblock %}
+		{% block post_post %}{% endblock %}
+	</div>
+</div>
+{% endblock %}

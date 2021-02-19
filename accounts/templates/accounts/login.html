@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content %}
+<div class="container" id="login_page">
+    <h1>Log In</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" value="Log In">
+    </form>
+    <p></p>
+    <a class="btn btn-success" role="button" href="{% provider_login_url "google" %}">
+        <img src="{% static 'image/google_icon.png' %}" width="40px" height="40px" style="margin-right:10px;">Google Log In</a>
+
+</div>
+
+{% endblock %}
